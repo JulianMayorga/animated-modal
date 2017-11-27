@@ -2,15 +2,16 @@ import React, { Component } from "react";
 
 const darkViolet = "#731ED2";
 const lightGrey = "#DCDAE1";
+const black = "#333";
 
 const Dot = () => (
   <div
     style={{
-      width: 3,
-      height: 3,
+      width: 2,
+      height: 2,
       backgroundColor: lightGrey,
-      borderRadius: 3,
-      marginTop: 3
+      borderRadius: 2,
+      marginTop: 2
     }}
   />
 );
@@ -130,7 +131,7 @@ class App extends Component {
             Edit info
           </a>
         </div>
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", marginBottom: 10 }}>
           <div
             style={{
               display: "flex",
@@ -143,7 +144,8 @@ class App extends Component {
               style={{
                 width: 10,
                 height: 10,
-                backgroundColor: lightGrey
+                backgroundColor: lightGrey,
+                marginBottom: 4
               }}
             />
             <Dot />
@@ -156,6 +158,54 @@ class App extends Component {
           >
             Monday, May 1
           </span>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            width: 10,
+            marginBottom: 10
+          }}
+        >
+          <div
+            style={{
+              width: 10,
+              height: 10,
+              backgroundColor: black,
+              marginBottom: 4
+            }}
+          />
+          <Dot />
+          <Dot />
+          <Dot />
+          <Dot />
+          <Dot />
+          <Dot />
+          <Dot />
+          <Dot />
+          <Dot />
+          <Dot />
+          <Dot />
+          <Dot />
+          <Dot />
+          <Dot />
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            width: 10
+          }}
+        >
+          <div
+            style={{
+              width: 10,
+              height: 10,
+              backgroundColor: black
+            }}
+          />
         </div>
       </div>
     );
