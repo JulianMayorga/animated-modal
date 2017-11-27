@@ -3,6 +3,18 @@ import React, { Component } from "react";
 const darkViolet = "#731ED2";
 const lightGrey = "#DCDAE1";
 
+const Dot = () => (
+  <div
+    style={{
+      width: 3,
+      height: 3,
+      backgroundColor: lightGrey,
+      borderRadius: 3,
+      marginTop: 3
+    }}
+  />
+);
+
 class App extends Component {
   render() {
     return (
@@ -117,6 +129,33 @@ class App extends Component {
           >
             Edit info
           </a>
+        </div>
+        <div style={{ display: "flex" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              marginRight: 10
+            }}
+          >
+            <div
+              style={{
+                width: 10,
+                height: 10,
+                backgroundColor: lightGrey
+              }}
+            />
+            <Dot />
+            <Dot />
+          </div>
+          <span
+            style={{
+              fontSize: ".75rem"
+            }}
+          >
+            Monday, May 1
+          </span>
         </div>
       </div>
     );
