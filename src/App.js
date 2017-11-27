@@ -18,7 +18,8 @@ class App extends Component {
         <h1
           style={{
             fontSize: "1rem",
-            marginBottom: 20
+            marginBottom: 20,
+            fontWeight: 600
           }}
         >
           Trip summary
@@ -27,7 +28,8 @@ class App extends Component {
           style={{
             display: "flex",
             height: 80,
-            boxShadow: `5px 5px 10px ${lightGrey}`
+            boxShadow: `5px 5px 10px ${lightGrey}`,
+            marginBottom: 30
           }}
         >
           <div style={{ backgroundColor: darkViolet, flexBasis: 80 }} />
@@ -40,7 +42,7 @@ class App extends Component {
               paddingLeft: 20
             }}
           >
-            <div
+            <span
               style={{
                 fontSize: ".75rem",
                 color: lightGrey,
@@ -50,18 +52,71 @@ class App extends Component {
               }}
             >
               PAR-NYC
-            </div>
-            <div
+            </span>
+            <span
               style={{
-                fontWeight: "bold",
+                fontWeight: 600,
                 display: "flex",
                 alignItems: "center",
                 flexGrow: 1
               }}
             >
               £ 4,000
-            </div>
+            </span>
           </div>
+        </div>
+        <h2
+          style={{
+            fontSize: ".85rem",
+            marginBottom: 20,
+            fontWeight: 500
+          }}
+        >
+          Flight details
+        </h2>
+        <div style={{ marginBottom: 20 }}>
+          <span
+            style={{
+              fontSize: ".75rem",
+              color: lightGrey
+            }}
+          >
+            Price:{" "}
+          </span>
+          <span
+            style={{
+              fontSize: ".75rem",
+              fontWeight: 600
+            }}
+          >
+            £ 388
+          </span>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            marginBottom: 20,
+            justifyContent: "space-between"
+          }}
+        >
+          <h3
+            style={{
+              fontSize: ".75rem",
+              fontWeight: 500,
+              margin: 0
+            }}
+          >
+            Departure
+          </h3>
+          <a
+            href=""
+            style={{
+              fontSize: ".65rem",
+              color: darkViolet
+            }}
+          >
+            Edit info
+          </a>
         </div>
       </div>
     );
