@@ -447,7 +447,6 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
         paddingTop: 40,
         paddingLeft: 50,
         gridGap: 25,
-        opacity: isOpen ? 1 : 0
       }}
     >
       <div
@@ -459,6 +458,8 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
           style={{
             cursor: "pointer",
             opacity: isOpen ? 1 : 0,
+            transitionProperty: "opacity",
+            transitionDuration: ".5s",
             zIndex: 1,
             color: white
           }}
@@ -475,6 +476,8 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
           style={{
             cursor: "pointer",
             opacity: isOpen ? 1 : 0,
+            transitionProperty: "opacity",
+            transitionDuration: ".5s",
             zIndex: 1,
             color: white,
             whiteSpace: "nowrap"
@@ -492,6 +495,8 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
           style={{
             cursor: "pointer",
             opacity: isOpen ? 1 : 0,
+            transitionProperty: "opacity",
+            transitionDuration: ".5s",
             zIndex: 1,
             color: white,
             whiteSpace: "nowrap"
@@ -509,6 +514,8 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
           style={{
             cursor: "pointer",
             opacity: isOpen ? 1 : 0,
+            transitionProperty: "opacity",
+            transitionDuration: ".5s",
             zIndex: 1,
             color: white
           }}
@@ -525,6 +532,8 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
           style={{
             cursor: "pointer",
             opacity: isOpen ? 1 : 0,
+            transitionProperty: "opacity",
+            transitionDuration: ".5s",
             zIndex: 1,
             color: white
           }}
@@ -541,6 +550,8 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
           style={{
             cursor: "pointer",
             opacity: isOpen ? 1 : 0,
+            transitionProperty: "opacity",
+            transitionDuration: ".5s",
             zIndex: 1,
             color: white
           }}
@@ -557,6 +568,8 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
           style={{
             cursor: "pointer",
             opacity: isOpen ? 1 : 0,
+            transitionProperty: "opacity",
+            transitionDuration: ".5s",
             zIndex: 1,
             color: white
           }}
