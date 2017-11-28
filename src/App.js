@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { createElement } from "glamor/react";
+/* @jsx createElement */
 
 const darkViolet = "#731ED2";
 const mediumViolet = "#9646EC";
@@ -12,7 +14,7 @@ const transparentWhite = "rgba(255,255,255,.9)";
 
 const Dot = () => (
   <div
-    style={{
+    css={{
       width: 2,
       height: 2,
       backgroundColor: lightGrey,
@@ -24,7 +26,7 @@ const Dot = () => (
 
 const TripSummary = ({ onModalButtonClick }) => (
   <div
-    style={{
+    css={{
       paddingLeft: 75,
       paddingTop: 40,
       paddingRight: 35,
@@ -33,7 +35,7 @@ const TripSummary = ({ onModalButtonClick }) => (
   >
     <a
       onClick={onModalButtonClick}
-      style={{
+      css={{
         backgroundColor: darkViolet,
         width: 40,
         height: 40,
@@ -47,7 +49,7 @@ const TripSummary = ({ onModalButtonClick }) => (
       }}
     />
     <h1
-      style={{
+      css={{
         fontSize: "1rem",
         marginBottom: 20,
         fontWeight: 600
@@ -56,16 +58,16 @@ const TripSummary = ({ onModalButtonClick }) => (
       Trip summary
     </h1>
     <div
-      style={{
+      css={{
         display: "flex",
         height: 80,
         boxShadow: `5px 5px 10px ${lightGrey}`,
         marginBottom: 30
       }}
     >
-      <div style={{ backgroundColor: darkViolet, flexBasis: 80 }} />
+      <div css={{ backgroundColor: darkViolet, flexBasis: 80 }} />
       <div
-        style={{
+        css={{
           display: "flex",
           flexDirection: "column",
           flexGrow: 1,
@@ -74,7 +76,7 @@ const TripSummary = ({ onModalButtonClick }) => (
         }}
       >
         <span
-          style={{
+          css={{
             fontSize: ".75rem",
             color: lightGrey,
             display: "flex",
@@ -85,7 +87,7 @@ const TripSummary = ({ onModalButtonClick }) => (
           PAR-NYC
         </span>
         <span
-          style={{
+          css={{
             fontWeight: 600,
             display: "flex",
             alignItems: "center",
@@ -97,7 +99,7 @@ const TripSummary = ({ onModalButtonClick }) => (
       </div>
     </div>
     <h2
-      style={{
+      css={{
         fontSize: ".85rem",
         marginBottom: 20,
         fontWeight: 500
@@ -105,9 +107,9 @@ const TripSummary = ({ onModalButtonClick }) => (
     >
       Flight details
     </h2>
-    <div style={{ marginBottom: 20 }}>
+    <div css={{ marginBottom: 20 }}>
       <span
-        style={{
+        css={{
           fontSize: ".75rem",
           color: lightGrey
         }}
@@ -115,7 +117,7 @@ const TripSummary = ({ onModalButtonClick }) => (
         Price:{" "}
       </span>
       <span
-        style={{
+        css={{
           fontSize: ".75rem",
           fontWeight: 600
         }}
@@ -124,14 +126,14 @@ const TripSummary = ({ onModalButtonClick }) => (
       </span>
     </div>
     <div
-      style={{
+      css={{
         display: "flex",
         marginBottom: 20,
         justifyContent: "space-between"
       }}
     >
       <h3
-        style={{
+        css={{
           fontSize: ".75rem",
           fontWeight: 500,
           margin: 0
@@ -141,7 +143,7 @@ const TripSummary = ({ onModalButtonClick }) => (
       </h3>
       <a
         href=""
-        style={{
+        css={{
           fontSize: ".65rem",
           color: darkViolet
         }}
@@ -149,9 +151,9 @@ const TripSummary = ({ onModalButtonClick }) => (
         Edit info
       </a>
     </div>
-    <div style={{ display: "flex", marginBottom: 10 }}>
+    <div css={{ display: "flex", marginBottom: 10 }}>
       <div
-        style={{
+        css={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -159,7 +161,7 @@ const TripSummary = ({ onModalButtonClick }) => (
         }}
       >
         <div
-          style={{
+          css={{
             width: 10,
             height: 10,
             backgroundColor: lightGrey,
@@ -170,7 +172,7 @@ const TripSummary = ({ onModalButtonClick }) => (
         <Dot />
       </div>
       <span
-        style={{
+        css={{
           fontSize: ".75rem"
         }}
       >
@@ -178,7 +180,7 @@ const TripSummary = ({ onModalButtonClick }) => (
       </span>
     </div>
     <div
-      style={{
+      css={{
         display: "grid",
         gridTemplateAreas: `"a b c d" "a e f d" "a g g g"`,
         gridTemplateColumns: "10% 30% 30% 30%",
@@ -187,7 +189,7 @@ const TripSummary = ({ onModalButtonClick }) => (
       }}
     >
       <div
-        style={{
+        css={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -198,7 +200,7 @@ const TripSummary = ({ onModalButtonClick }) => (
         }}
       >
         <div
-          style={{
+          css={{
             width: 10,
             height: 10,
             backgroundColor: black,
@@ -221,7 +223,7 @@ const TripSummary = ({ onModalButtonClick }) => (
         <Dot />
       </div>
       <span
-        style={{
+        css={{
           fontSize: ".75rem",
           whiteSpace: "nowrap",
           gridArea: "b",
@@ -231,7 +233,7 @@ const TripSummary = ({ onModalButtonClick }) => (
         6:25 am
       </span>
       <span
-        style={{
+        css={{
           fontSize: ".65rem",
           whiteSpace: "nowrap",
           gridArea: "c",
@@ -242,7 +244,7 @@ const TripSummary = ({ onModalButtonClick }) => (
         Paris CDG
       </span>
       <div
-        style={{
+        css={{
           display: "flex",
           alignItems: "center",
           justifyContent: "flex-start",
@@ -251,7 +253,7 @@ const TripSummary = ({ onModalButtonClick }) => (
         }}
       >
         <div
-          style={{
+          css={{
             width: 25,
             height: 25,
             borderRadius: 25,
@@ -261,7 +263,7 @@ const TripSummary = ({ onModalButtonClick }) => (
           }}
         />
         <span
-          style={{
+          css={{
             fontSize: ".55rem",
             color: lightGrey
           }}
@@ -270,7 +272,7 @@ const TripSummary = ({ onModalButtonClick }) => (
         </span>
       </div>
       <span
-        style={{
+        css={{
           fontSize: ".75rem",
           whiteSpace: "nowrap",
           flex: 1,
@@ -280,7 +282,7 @@ const TripSummary = ({ onModalButtonClick }) => (
         7:50 am
       </span>
       <span
-        style={{
+        css={{
           fontSize: ".65rem",
           whiteSpace: "nowrap",
           color: lightGrey,
@@ -291,7 +293,7 @@ const TripSummary = ({ onModalButtonClick }) => (
         Munich MUN
       </span>
       <div
-        style={{
+        css={{
           display: "flex",
           gridArea: "g",
           fontSize: ".75rem",
@@ -301,14 +303,14 @@ const TripSummary = ({ onModalButtonClick }) => (
         }}
       >
         <div
-          style={{
+          css={{
             height: 1,
             backgroundColor: lightGrey,
             flex: 1
           }}
         />
         <span
-          style={{
+          css={{
             backgroundColor: lightGrey,
             fontSize: ".55rem",
             padding: 2,
@@ -318,7 +320,7 @@ const TripSummary = ({ onModalButtonClick }) => (
           4 h 20 m
         </span>
         <div
-          style={{
+          css={{
             height: 1,
             backgroundColor: lightGrey,
             flex: 1
@@ -327,7 +329,7 @@ const TripSummary = ({ onModalButtonClick }) => (
       </div>
     </div>
     <div
-      style={{
+      css={{
         display: "grid",
         gridTemplateAreas: `"a b c d" "a e f d"`,
         gridTemplateColumns: "10% 30% 30% 30%",
@@ -335,7 +337,7 @@ const TripSummary = ({ onModalButtonClick }) => (
       }}
     >
       <div
-        style={{
+        css={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -346,7 +348,7 @@ const TripSummary = ({ onModalButtonClick }) => (
         }}
       >
         <div
-          style={{
+          css={{
             width: 10,
             height: 10,
             backgroundColor: black,
@@ -355,7 +357,7 @@ const TripSummary = ({ onModalButtonClick }) => (
         />
       </div>
       <span
-        style={{
+        css={{
           fontSize: ".75rem",
           whiteSpace: "nowrap",
           gridArea: "b",
@@ -365,7 +367,7 @@ const TripSummary = ({ onModalButtonClick }) => (
         12:10 pm
       </span>
       <span
-        style={{
+        css={{
           fontSize: ".65rem",
           whiteSpace: "nowrap",
           gridArea: "c",
@@ -376,7 +378,7 @@ const TripSummary = ({ onModalButtonClick }) => (
         Munich MUN
       </span>
       <div
-        style={{
+        css={{
           display: "flex",
           alignItems: "center",
           justifyContent: "flex-start",
@@ -385,7 +387,7 @@ const TripSummary = ({ onModalButtonClick }) => (
         }}
       >
         <div
-          style={{
+          css={{
             width: 25,
             height: 25,
             borderRadius: 25,
@@ -395,7 +397,7 @@ const TripSummary = ({ onModalButtonClick }) => (
           }}
         />
         <span
-          style={{
+          css={{
             fontSize: ".55rem",
             color: lightGrey
           }}
@@ -404,7 +406,7 @@ const TripSummary = ({ onModalButtonClick }) => (
         </span>
       </div>
       <span
-        style={{
+        css={{
           fontSize: ".75rem",
           whiteSpace: "nowrap",
           flex: 1,
@@ -414,7 +416,7 @@ const TripSummary = ({ onModalButtonClick }) => (
         9:15 pm
       </span>
       <span
-        style={{
+        css={{
           fontSize: ".65rem",
           whiteSpace: "nowrap",
           color: lightGrey,
@@ -435,7 +437,7 @@ const Menu = ({
   transitionDuration = 1
 }) => (
   <div
-    style={{
+    css={{
       position: "absolute",
       left: 0,
       top: 0,
@@ -446,7 +448,7 @@ const Menu = ({
     }}
   >
     <div
-      style={{
+      css={{
         display: "grid",
         flexDirection: "column",
         paddingTop: 40,
@@ -463,7 +465,7 @@ const Menu = ({
               duration / menuItems.length}s`;
         return (
           <div
-            style={{
+            css={{
               zIndex: 1,
               transitionProperty: "transform",
               transitionDuration: `${duration}s`,
@@ -473,7 +475,7 @@ const Menu = ({
             key={menuItem}
           >
             <a
-              style={{
+              css={{
                 cursor: "pointer",
                 opacity: isOpen ? 1 : 0,
                 transitionProperty: "opacity",
@@ -490,7 +492,7 @@ const Menu = ({
       })}
     </div>
     <a
-      style={{
+      css={{
         width: 40,
         height: 40,
         position: "absolute",
@@ -508,7 +510,7 @@ const Menu = ({
       }}
     />
     <a
-      style={{
+      css={{
         width: 40,
         height: 40,
         position: "absolute",
@@ -539,7 +541,7 @@ const Menu = ({
       </svg>
     </a>
     <div
-      style={{
+      css={{
         position: "absolute",
         top: 0,
         left: 0,
@@ -554,7 +556,7 @@ const Menu = ({
       }}
     />
     <div
-      style={{
+      css={{
         position: "absolute",
         top: "-20vh",
         marginTop: 60,
@@ -570,7 +572,7 @@ const Menu = ({
       }}
     />
     <div
-      style={{
+      css={{
         position: "absolute",
         top: 60,
         left: 20,
@@ -602,7 +604,7 @@ class App extends Component {
   render() {
     return (
       <div
-        style={{
+        css={{
           fontFamily: "sans-serif"
         }}
       >
