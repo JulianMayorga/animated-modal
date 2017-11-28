@@ -543,6 +543,7 @@ const Menu = ({
     <div
       css={{
         position: "absolute",
+        willChange: "transform",
         top: 0,
         left: 0,
         backgroundColor: transparentWhite,
@@ -558,6 +559,7 @@ const Menu = ({
     <div
       css={{
         position: "absolute",
+        willChange: "transform",
         top: "-20vh",
         marginTop: 60,
         left: 0,
@@ -574,12 +576,13 @@ const Menu = ({
     <div
       css={{
         position: "absolute",
+        willChange: "transform",
         top: 60,
         left: 20,
         backgroundColor: darkViolet,
         width: "calc(70vh*2)",
-        height: "calc(70vh*2)",
-        transform: `translate(-50%,-50%) ${isOpen ? "scale(1)" : "scale(0)"}`,
+          height: "calc(70vh*2)",
+          transform: `translate(-50%,-50%) ${isOpen ? "scale(1)" : "scale(0)"}`,
         transitionProperty: "transform",
         transitionDuration: `${transitionDuration / 2}s`,
         transitionDelay: !isOpen && `${transitionDuration / 2}s`,
