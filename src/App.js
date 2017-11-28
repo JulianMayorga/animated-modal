@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 
 const darkViolet = "#731ED2";
+const mediumViolet = "#9646EC";
 const lightViolet = "#AD85DC";
 const lightGrey = "#DCDAE1";
 const black = "#333";
 const yellow = "#E9B308";
 const white = "#FFF";
+const beige = "#EAB49E";
+const transparentWhite = "rgba(255,255,255,.9)";
 
 const Dot = () => (
   <div
@@ -513,6 +516,68 @@ const Menu = ({ isOpen }) => (
         <a style={{ cursor: "pointer", zIndex: 1, color: white }}>Logout</a>
       </div>
     </div>
+    <a
+      style={{
+        width: 40,
+        height: 40,
+        position: "absolute",
+        top: 50,
+        right: 50,
+        backgroundColor: beige,
+        zIndex: 1,
+        transform: "translate(50%, -50%)",
+        borderRadius: "100%"
+      }}
+    />
+    <a
+      style={{
+        width: 40,
+        height: 40,
+        position: "absolute",
+        bottom: 50,
+        right: "50%",
+        backgroundColor: darkViolet,
+        zIndex: 1,
+        transform: "translate(50%, 50%)",
+        borderRadius: "100%",
+        display: "flex",
+        cursor: "pointer"
+      }}
+    >
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 100 100"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line x1="35" y1="35" x2="65" y2="65" strokeWidth="5" stroke={white} />
+        <line x1="35" y1="65" x2="65" y2="35" strokeWidth="5" stroke={white} />
+      </svg>
+    </a>
+    <div
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        backgroundColor: transparentWhite,
+        width: "220vh",
+        height: "220vh",
+        transform: "translate(-50%,-50%)",
+        borderRadius: "100%"
+      }}
+    />
+    <div
+      style={{
+        position: "absolute",
+        top: "-20vh",
+        left: 0,
+        backgroundColor: mediumViolet,
+        width: "calc(160vh + 20vh * 2)",
+        height: "calc(160vh + 20vh * 2)",
+        transform: "translate(-50%,-50%)",
+        borderRadius: "100%"
+      }}
+    />
     <div
       style={{
         position: "absolute",
