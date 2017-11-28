@@ -428,7 +428,7 @@ const TripSummary = ({ onModalButtonClick }) => (
   </div>
 );
 
-const Menu = ({ isOpen, onCloseButtonClick }) => (
+const Menu = ({ isOpen, onCloseButtonClick, menuItems }) => (
   <div
     style={{
       position: "absolute",
@@ -449,141 +449,32 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
         gridGap: 25,
       }}
     >
-      <div
-        style={{
-          zIndex: 1
-        }}
-      >
-        <a
+      {menuItems.map((menuItem, index) => (
+        <div
           style={{
-            cursor: "pointer",
-            opacity: isOpen ? 1 : 0,
-            transitionProperty: "opacity",
-            transitionDuration: ".5s",
-            transitionDelay: isOpen ? "0s" : ".42s",
-            zIndex: 1,
-            color: white
+            zIndex: 1
           }}
+          key={menuItem}
         >
-          Home
-        </a>
-      </div>
-      <div
-        style={{
-          zIndex: 1
-        }}
-      >
-        <a
-          style={{
-            cursor: "pointer",
-            opacity: isOpen ? 1 : 0,
-            transitionProperty: "opacity",
-            transitionDuration: ".5s",
-            transitionDelay: isOpen ? ".07s" : ".35s",
-            zIndex: 1,
-            color: white,
-            whiteSpace: "nowrap"
-          }}
-        >
-          My Trips
-        </a>
-      </div>
-      <div
-        style={{
-          zIndex: 1
-        }}
-      >
-        <a
-          style={{
-            cursor: "pointer",
-            opacity: isOpen ? 1 : 0,
-            transitionProperty: "opacity",
-            transitionDuration: ".5s",
-            transitionDelay: isOpen ? ".14s" : ".28s",
-            zIndex: 1,
-            color: white,
-            whiteSpace: "nowrap"
-          }}
-        >
-          Trip Summary
-        </a>
-      </div>
-      <div
-        style={{
-          zIndex: 1
-        }}
-      >
-        <a
-          style={{
-            cursor: "pointer",
-            opacity: isOpen ? 1 : 0,
-            transitionProperty: "opacity",
-            transitionDuration: ".5s",
-            transitionDelay: isOpen ? ".21s" : ".21s",
-            zIndex: 1,
-            color: white
-          }}
-        >
-          Wallet
-        </a>
-      </div>
-      <div
-        style={{
-          zIndex: 1
-        }}
-      >
-        <a
-          style={{
-            cursor: "pointer",
-            opacity: isOpen ? 1 : 0,
-            transitionProperty: "opacity",
-            transitionDuration: ".5s",
-            transitionDelay: isOpen ? ".28s" : ".14s",
-            zIndex: 1,
-            color: white
-          }}
-        >
-          Settings
-        </a>
-      </div>
-      <div
-        style={{
-          zIndex: 1
-        }}
-      >
-        <a
-          style={{
-            cursor: "pointer",
-            opacity: isOpen ? 1 : 0,
-            transitionProperty: "opacity",
-            transitionDuration: ".5s",
-            transitionDelay: isOpen ? ".35s" : ".07s",
-            zIndex: 1,
-            color: white
-          }}
-        >
-          Feedback
-        </a>
-      </div>
-      <div
-        style={{
-          zIndex: 1
-        }}
-      >
-        <a
-          style={{
-            cursor: "pointer",
-            opacity: isOpen ? 1 : 0,
-            transitionProperty: "opacity",
-            transitionDuration: ".5s",
-            transitionDelay: isOpen ? ".42s" : "0s",
-            zIndex: 1,
-            color: white
-          }}
-        >
-          Logout
-        </a>
-      </div>
+          <a
+            style={{
+              cursor: "pointer",
+              opacity: isOpen ? 1 : 0,
+              transitionProperty: "opacity",
+              transitionDuration: ".5s",
+              transitionDelay: isOpen
+                ? `${index * 0.5 / menuItems.length}s`
+                : `${0.5 -
+                    index * 0.5 / menuItems.length +
+                    0.5 / menuItems.length}s`,
+              zIndex: 1,
+              color: white
+            }}
+          >
+            {menuItem}
+          </a>
+        </div>
+      ))}
     </div>
     <a
       style={{
@@ -683,6 +574,16 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
   </div>
 );
 
+const menuItems = [
+  "Home",
+  "My Trips",
+  "Trip Summary",
+  "Wallet",
+  "Settings",
+  "Feedback",
+  "Logout"
+];
+
 class App extends Component {
   state = { isMenuOpened: false };
   render() {
@@ -697,6 +598,7 @@ class App extends Component {
         />
         <Menu
           isOpen={this.state.isMenuOpened}
+          menuItems={menuItems}
           onCloseButtonClick={() => this.setState({ isMenuOpened: false })}
         />
       </div>
