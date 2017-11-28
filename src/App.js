@@ -428,7 +428,7 @@ const TripSummary = ({ onModalButtonClick }) => (
   </div>
 );
 
-const Menu = ({ isOpen }) => (
+const Menu = ({ isOpen, onCloseButtonClick }) => (
   <div
     style={{
       position: "absolute",
@@ -436,7 +436,8 @@ const Menu = ({ isOpen }) => (
       top: 0,
       width: "100%",
       height: "100%",
-      overflow: "hidden"
+      overflow: "hidden",
+      pointerEvents: isOpen ? "initial" : "none"
     }}
   >
     <div
@@ -445,7 +446,8 @@ const Menu = ({ isOpen }) => (
         flexDirection: "column",
         paddingTop: 40,
         paddingLeft: 50,
-        gridGap: 25
+        gridGap: 25,
+        opacity: isOpen ? 1 : 0
       }}
     >
       <div
@@ -453,7 +455,16 @@ const Menu = ({ isOpen }) => (
           zIndex: 1
         }}
       >
-        <a style={{ cursor: "pointer", zIndex: 1, color: white }}>Home</a>
+        <a
+          style={{
+            cursor: "pointer",
+            opacity: isOpen ? 1 : 0,
+            zIndex: 1,
+            color: white
+          }}
+        >
+          Home
+        </a>
       </div>
       <div
         style={{
@@ -463,6 +474,7 @@ const Menu = ({ isOpen }) => (
         <a
           style={{
             cursor: "pointer",
+            opacity: isOpen ? 1 : 0,
             zIndex: 1,
             color: white,
             whiteSpace: "nowrap"
@@ -479,6 +491,7 @@ const Menu = ({ isOpen }) => (
         <a
           style={{
             cursor: "pointer",
+            opacity: isOpen ? 1 : 0,
             zIndex: 1,
             color: white,
             whiteSpace: "nowrap"
@@ -492,28 +505,64 @@ const Menu = ({ isOpen }) => (
           zIndex: 1
         }}
       >
-        <a style={{ cursor: "pointer", zIndex: 1, color: white }}>Wallet</a>
+        <a
+          style={{
+            cursor: "pointer",
+            opacity: isOpen ? 1 : 0,
+            zIndex: 1,
+            color: white
+          }}
+        >
+          Wallet
+        </a>
       </div>
       <div
         style={{
           zIndex: 1
         }}
       >
-        <a style={{ cursor: "pointer", zIndex: 1, color: white }}>Settings</a>
+        <a
+          style={{
+            cursor: "pointer",
+            opacity: isOpen ? 1 : 0,
+            zIndex: 1,
+            color: white
+          }}
+        >
+          Settings
+        </a>
       </div>
       <div
         style={{
           zIndex: 1
         }}
       >
-        <a style={{ cursor: "pointer", zIndex: 1, color: white }}>Feedback</a>
+        <a
+          style={{
+            cursor: "pointer",
+            opacity: isOpen ? 1 : 0,
+            zIndex: 1,
+            color: white
+          }}
+        >
+          Feedback
+        </a>
       </div>
       <div
         style={{
           zIndex: 1
         }}
       >
-        <a style={{ cursor: "pointer", zIndex: 1, color: white }}>Logout</a>
+        <a
+          style={{
+            cursor: "pointer",
+            opacity: isOpen ? 1 : 0,
+            zIndex: 1,
+            color: white
+          }}
+        >
+          Logout
+        </a>
       </div>
     </div>
     <a
@@ -522,7 +571,7 @@ const Menu = ({ isOpen }) => (
         height: 40,
         position: "absolute",
         top: 50,
-        right: 50,
+        right: isOpen ? 50 : -20,
         backgroundColor: beige,
         zIndex: 1,
         transform: "translate(50%, -50%)",
@@ -534,7 +583,7 @@ const Menu = ({ isOpen }) => (
         width: 40,
         height: 40,
         position: "absolute",
-        bottom: 50,
+        bottom: isOpen ? 50 : -20,
         right: "50%",
         backgroundColor: darkViolet,
         zIndex: 1,
@@ -543,6 +592,7 @@ const Menu = ({ isOpen }) => (
         display: "flex",
         cursor: "pointer"
       }}
+      onClick={onCloseButtonClick}
     >
       <svg
         width="100%"
@@ -560,8 +610,8 @@ const Menu = ({ isOpen }) => (
         top: 0,
         left: 0,
         backgroundColor: transparentWhite,
-        width: "220vh",
-        height: "220vh",
+        width: isOpen ? "220vh" : 0,
+        height: isOpen ? "220vh" : 0,
         transform: "translate(-50%,-50%)",
         borderRadius: "100%"
       }}
@@ -572,8 +622,8 @@ const Menu = ({ isOpen }) => (
         top: "-20vh",
         left: 0,
         backgroundColor: mediumViolet,
-        width: "calc(160vh + 20vh * 2)",
-        height: "calc(160vh + 20vh * 2)",
+        width: isOpen ? "calc(160vh + 20vh * 2)" : 0,
+        height: isOpen ? "calc(160vh + 20vh * 2)" : 0,
         transform: "translate(-50%,-50%)",
         borderRadius: "100%"
       }}
@@ -584,8 +634,8 @@ const Menu = ({ isOpen }) => (
         top: 0,
         left: 0,
         backgroundColor: darkViolet,
-        width: "calc(80vh*2)",
-        height: "calc(80vh*2)",
+        width: isOpen ? "calc(80vh*2)" : 0,
+        height: isOpen ? "calc(80vh*2)" : 0,
         transform: "translate(-50%,-50%)",
         borderRadius: "100%"
       }}
@@ -594,7 +644,7 @@ const Menu = ({ isOpen }) => (
 );
 
 class App extends Component {
-  state = { isMenuOpened: true };
+  state = { isMenuOpened: false };
   render() {
     return (
       <div
@@ -605,7 +655,10 @@ class App extends Component {
         <TripSummary
           onModalButtonClick={() => this.setState({ isMenuOpened: true })}
         />
-        <Menu isOpen={this.state.isMenuOpened} />
+        <Menu
+          isOpen={this.state.isMenuOpened}
+          onCloseButtonClick={() => this.setState({ isMenuOpened: false })}
+        />
       </div>
     );
   }
