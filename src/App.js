@@ -428,7 +428,12 @@ const TripSummary = ({ onModalButtonClick }) => (
   </div>
 );
 
-const Menu = ({ isOpen, onCloseButtonClick, menuItems }) => (
+const Menu = ({
+  isOpen,
+  onCloseButtonClick,
+  menuItems,
+  transitionDuration = 1
+}) => (
   <div
     style={{
       position: "absolute",
@@ -461,12 +466,12 @@ const Menu = ({ isOpen, onCloseButtonClick, menuItems }) => (
               cursor: "pointer",
               opacity: isOpen ? 1 : 0,
               transitionProperty: "opacity",
-              transitionDuration: ".5s",
+              transitionDuration: `${transitionDuration / 2}s`,
               transitionDelay: isOpen
-                ? `${index * 0.5 / menuItems.length}s`
-                : `${0.5 -
-                    index * 0.5 / menuItems.length +
-                    0.5 / menuItems.length}s`,
+                ? `${index * (transitionDuration / 2) / menuItems.length}s`
+                : `${transitionDuration / 2 -
+                    index * (transitionDuration / 2) / menuItems.length +
+                    transitionDuration / 2 / menuItems.length}s`,
               zIndex: 1,
               color: white
             }}
@@ -487,7 +492,7 @@ const Menu = ({ isOpen, onCloseButtonClick, menuItems }) => (
         zIndex: 1,
         transform: `translate(${isOpen ? "50%" : "90px"}, -50%)`,
         transitionProperty: "transform",
-        transitionDuration: "1s",
+        transitionDuration: `${transitionDuration}s`,
         transitionTimingFunction: isOpen
           ? "cubic-bezier(0.5, 1, 0.3, 1.3)"
           : "cubic-bezier(0.5, -1, 0.3, 1.3)",
@@ -505,7 +510,7 @@ const Menu = ({ isOpen, onCloseButtonClick, menuItems }) => (
         zIndex: 1,
         transform: `translate(50%, ${isOpen ? "-50%" : "90px"})`,
         transitionProperty: "transform",
-        transitionDuration: "1s",
+        transitionDuration: `${transitionDuration}s`,
         transitionTimingFunction: isOpen
           ? "cubic-bezier(0.5, 1, 0.3, 1.3)"
           : "cubic-bezier(0.5, -1, 0.3, 1.3)",
@@ -535,8 +540,8 @@ const Menu = ({ isOpen, onCloseButtonClick, menuItems }) => (
         height: "220vh",
         transform: `translate(-50%,-50%) ${isOpen ? "scale(1)" : "scale(0)"}`,
         transitionProperty: "transform",
-        transitionDuration: ".5s",
-        transitionDelay: !isOpen && ".5s",
+        transitionDuration: `${transitionDuration / 2}s`,
+        transitionDelay: !isOpen && `${transitionDuration / 2}s`,
         borderRadius: "100%"
       }}
     />
@@ -551,8 +556,8 @@ const Menu = ({ isOpen, onCloseButtonClick, menuItems }) => (
         height: "calc(140vh + 20vh * 2)",
         transform: `translate(-50%,-50%) ${isOpen ? "scale(1)" : "scale(0)"}`,
         transitionProperty: "transform",
-        transitionDuration: ".5s",
-        transitionDelay: !isOpen && ".5s",
+        transitionDuration: `${transitionDuration / 2}s`,
+        transitionDelay: !isOpen && `${transitionDuration / 2}s`,
         borderRadius: "100%"
       }}
     />
@@ -566,8 +571,8 @@ const Menu = ({ isOpen, onCloseButtonClick, menuItems }) => (
         height: "calc(70vh*2)",
         transform: `translate(-50%,-50%) ${isOpen ? "scale(1)" : "scale(0)"}`,
         transitionProperty: "transform",
-        transitionDuration: ".5s",
-        transitionDelay: !isOpen && ".5s",
+        transitionDuration: `${transitionDuration / 2}s`,
+        transitionDelay: !isOpen && `${transitionDuration / 2}s`,
         borderRadius: "100%"
       }}
     />
