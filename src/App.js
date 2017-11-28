@@ -623,9 +623,11 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
         top: 0,
         left: 0,
         backgroundColor: transparentWhite,
-        width: isOpen ? "220vh" : 0,
-        height: isOpen ? "220vh" : 0,
-        transform: "translate(-50%,-50%)",
+        width: "220vh",
+        height: "220vh",
+        transform: `translate(-50%,-50%) ${isOpen ? "scale(1)" : "scale(0)"}`,
+        transitionProperty: "transform",
+        transitionDuration: ".5s",
         borderRadius: "100%"
       }}
     />
@@ -635,9 +637,11 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
         top: "-20vh",
         left: 0,
         backgroundColor: mediumViolet,
-        width: isOpen ? "calc(160vh + 20vh * 2)" : 0,
-        height: isOpen ? "calc(160vh + 20vh * 2)" : 0,
-        transform: "translate(-50%,-50%)",
+        width: "calc(160vh + 20vh * 2)",
+        height: "calc(160vh + 20vh * 2)",
+        transform: `translate(-50%,-50%) ${isOpen ? "scale(1)" : "scale(0)"}`,
+        transitionProperty: "transform",
+        transitionDuration: ".5s",
         borderRadius: "100%"
       }}
     />
@@ -647,9 +651,11 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
         top: 0,
         left: 0,
         backgroundColor: darkViolet,
-        width: isOpen ? "calc(80vh*2)" : 0,
-        height: isOpen ? "calc(80vh*2)" : 0,
-        transform: "translate(-50%,-50%)",
+        width: "calc(80vh*2)",
+        height: "calc(80vh*2)",
+        transform: `translate(-50%,-50%) ${isOpen ? "scale(1)" : "scale(0)"}`,
+        transitionProperty: "transform",
+        transitionDuration: ".5s",
         borderRadius: "100%"
       }}
     />
