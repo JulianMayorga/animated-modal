@@ -454,32 +454,40 @@ const Menu = ({
         gridGap: 25,
       }}
     >
-      {menuItems.map((menuItem, index) => (
-        <div
-          style={{
-            zIndex: 1
-          }}
-          key={menuItem}
-        >
-          <a
+      {menuItems.map((menuItem, index) => {
+        const duration = transitionDuration / 2;
+        const transitionDelay = isOpen
+          ? `${index * duration / menuItems.length}s`
+          : `${duration -
+              index * duration / menuItems.length +
+              duration / menuItems.length}s`;
+        return (
+          <div
             style={{
-              cursor: "pointer",
-              opacity: isOpen ? 1 : 0,
-              transitionProperty: "opacity",
-              transitionDuration: `${transitionDuration / 2}s`,
-              transitionDelay: isOpen
-                ? `${index * (transitionDuration / 2) / menuItems.length}s`
-                : `${transitionDuration / 2 -
-                    index * (transitionDuration / 2) / menuItems.length +
-                    transitionDuration / 2 / menuItems.length}s`,
               zIndex: 1,
-              color: white
+              transitionProperty: "transform",
+              transitionDuration: `${duration}s`,
+              transitionDelay,
+              transform: `translateY(${isOpen ? 0 : 20}px)`
             }}
+            key={menuItem}
           >
-            {menuItem}
-          </a>
-        </div>
-      ))}
+            <a
+              style={{
+                cursor: "pointer",
+                opacity: isOpen ? 1 : 0,
+                transitionProperty: "opacity",
+                transitionDuration: `${duration}s`,
+                transitionDelay,
+                zIndex: 1,
+                color: white
+              }}
+            >
+              {menuItem}
+            </a>
+          </div>
+        );
+      })}
     </div>
     <a
       style={{
