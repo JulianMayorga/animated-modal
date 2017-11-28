@@ -613,6 +613,7 @@ class App extends Component {
           isOpen={this.state.isMenuOpened}
           menuItems={menuItems}
           onCloseButtonClick={() => this.setState({ isMenuOpened: false })}
+          transitionDuration={.75}
         />
       </div>
     );
