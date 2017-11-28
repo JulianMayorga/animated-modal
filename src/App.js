@@ -584,10 +584,15 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
         height: 40,
         position: "absolute",
         top: 50,
-        right: isOpen ? 50 : -20,
+        right: 50,
         backgroundColor: beige,
         zIndex: 1,
-        transform: "translate(50%, -50%)",
+        transform: `translate(${isOpen ? "50%" : "90px"}, -50%)`,
+        transitionProperty: "transform",
+        transitionDuration: ".5s",
+        transitionTimingFunction: isOpen
+          ? "cubic-bezier(0.5, 1, 0.3, 1.3)"
+          : "cubic-bezier(0.5, -1, 0.3, 1.3)",
         borderRadius: "100%"
       }}
     />
@@ -596,11 +601,16 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
         width: 40,
         height: 40,
         position: "absolute",
-        bottom: isOpen ? 50 : -20,
+        bottom: 0,
         right: "50%",
         backgroundColor: darkViolet,
         zIndex: 1,
-        transform: "translate(50%, 50%)",
+        transform: `translate(50%, ${isOpen ? "-50%" : "90px"})`,
+        transitionProperty: "transform",
+        transitionDuration: ".5s",
+        transitionTimingFunction: isOpen
+          ? "cubic-bezier(0.5, 1, 0.3, 1.3)"
+          : "cubic-bezier(0.5, -1, 0.3, 1.3)",
         borderRadius: "100%",
         display: "flex",
         cursor: "pointer"
