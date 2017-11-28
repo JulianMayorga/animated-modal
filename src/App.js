@@ -460,6 +460,7 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
             opacity: isOpen ? 1 : 0,
             transitionProperty: "opacity",
             transitionDuration: ".5s",
+            transitionDelay: isOpen ? "0s" : ".42s",
             zIndex: 1,
             color: white
           }}
@@ -478,6 +479,7 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
             opacity: isOpen ? 1 : 0,
             transitionProperty: "opacity",
             transitionDuration: ".5s",
+            transitionDelay: isOpen ? ".07s" : ".35s",
             zIndex: 1,
             color: white,
             whiteSpace: "nowrap"
@@ -497,6 +499,7 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
             opacity: isOpen ? 1 : 0,
             transitionProperty: "opacity",
             transitionDuration: ".5s",
+            transitionDelay: isOpen ? ".14s" : ".28s",
             zIndex: 1,
             color: white,
             whiteSpace: "nowrap"
@@ -516,6 +519,7 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
             opacity: isOpen ? 1 : 0,
             transitionProperty: "opacity",
             transitionDuration: ".5s",
+            transitionDelay: isOpen ? ".21s" : ".21s",
             zIndex: 1,
             color: white
           }}
@@ -534,6 +538,7 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
             opacity: isOpen ? 1 : 0,
             transitionProperty: "opacity",
             transitionDuration: ".5s",
+            transitionDelay: isOpen ? ".28s" : ".14s",
             zIndex: 1,
             color: white
           }}
@@ -552,6 +557,7 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
             opacity: isOpen ? 1 : 0,
             transitionProperty: "opacity",
             transitionDuration: ".5s",
+            transitionDelay: isOpen ? ".35s" : ".07s",
             zIndex: 1,
             color: white
           }}
@@ -570,6 +576,7 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
             opacity: isOpen ? 1 : 0,
             transitionProperty: "opacity",
             transitionDuration: ".5s",
+            transitionDelay: isOpen ? ".42s" : "0s",
             zIndex: 1,
             color: white
           }}
@@ -589,7 +596,7 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
         zIndex: 1,
         transform: `translate(${isOpen ? "50%" : "90px"}, -50%)`,
         transitionProperty: "transform",
-        transitionDuration: ".5s",
+        transitionDuration: "1s",
         transitionTimingFunction: isOpen
           ? "cubic-bezier(0.5, 1, 0.3, 1.3)"
           : "cubic-bezier(0.5, -1, 0.3, 1.3)",
@@ -607,7 +614,7 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
         zIndex: 1,
         transform: `translate(50%, ${isOpen ? "-50%" : "90px"})`,
         transitionProperty: "transform",
-        transitionDuration: ".5s",
+        transitionDuration: "1s",
         transitionTimingFunction: isOpen
           ? "cubic-bezier(0.5, 1, 0.3, 1.3)"
           : "cubic-bezier(0.5, -1, 0.3, 1.3)",
@@ -638,6 +645,7 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
         transform: `translate(-50%,-50%) ${isOpen ? "scale(1)" : "scale(0)"}`,
         transitionProperty: "transform",
         transitionDuration: ".5s",
+        transitionDelay: !isOpen && ".5s",
         borderRadius: "100%"
       }}
     />
@@ -653,6 +661,7 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
         transform: `translate(-50%,-50%) ${isOpen ? "scale(1)" : "scale(0)"}`,
         transitionProperty: "transform",
         transitionDuration: ".5s",
+        transitionDelay: !isOpen && ".5s",
         borderRadius: "100%"
       }}
     />
@@ -667,6 +676,7 @@ const Menu = ({ isOpen, onCloseButtonClick }) => (
         transform: `translate(-50%,-50%) ${isOpen ? "scale(1)" : "scale(0)"}`,
         transitionProperty: "transform",
         transitionDuration: ".5s",
+        transitionDelay: !isOpen && ".5s",
         borderRadius: "100%"
       }}
     />
